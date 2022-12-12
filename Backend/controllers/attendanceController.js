@@ -4,12 +4,17 @@
 
 const getAttendance = (req, res) => {
     res.status(200).json({ message: 'Get Attendance' })
+
 }
 
 //@desc    SET Attendance
 //@route   POST /api/attendance
 
 const setAttendance = (req, res) => {
+    if(!res.body.text){
+        res.status(400)
+        throw new Error("Please add Attendance")
+      }
     res.status(200).json({ message: 'Set Attendance' })
 }
 
@@ -20,7 +25,7 @@ const updateAttendance = (req, res) => {
     res.status(200).json({ message: `Update Attendance ${req.params.id}` })
 }
 
-//@desc    Delete Attendance
+//@desc    Delete  Attendance
 //@route   DELETE /api/attendance
 
 const deleteAttendance = (req, res) => {
