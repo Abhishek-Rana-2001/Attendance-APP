@@ -28,7 +28,7 @@ const Class = () => {
    
   <>
     <h1>Use Axios</h1>
-    <div className='container'>
+    <div className='class-container'>
     {myData.map((post)=>{
       const {id ,title ,body} = post;
       return <div className='card' key={id}>
